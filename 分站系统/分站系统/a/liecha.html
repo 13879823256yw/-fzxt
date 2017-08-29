@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>分站系统</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                 <img alt="image" class="img-circle" src="svg/profile_small.svg"  />
+                            </span>
+                              <span data-toggle="dropdown" class="dropdown-toggle" href="#"  >
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">杭州上家</strong>
+                               </span> <span class="text-muted text-xs block">颜丹丹</span> </span>
+                            </span>
+                        </div>
+                        <div class="logo-element">
+                            UPH
+                        </div>
+                    </li>
+
+                    <li    >
+                        <a href="layouts.html"><i class="fa fa-bar-chart-o"></i><span class="nav-label">主页</span></a>
+                    </li>
+                    <!--新增技师收入开始-->
+                    <li>
+                        <a href="jiincome.html"><i class="fa fa-search" aria-hidden="true"></i> <span class="nav-label">技师收入</span></a>
+                    </li>
+                    <!--新增技师收入结束-->
+                    <li  class="active">
+                        <a href="gongdan.html"><i class="fa fa-search" aria-hidden="true"></i><span class="nav-label">工单查询</span></a>
+                    </li>
+                    <li >
+                        <a href="gongdanlist.html"  ><i class="fa fa-wrench"></i><span class="nav-label">工单列表</span></a>
+                    </li>
+                    <li  >
+                        <a href="zhipai.html"  ><i class="fa fa-hand-o-right"></i><span class="nav-label">技师指派</span></a>
+                    </li>
+                    <li >
+                        <a href="schedul-appoin.html"  ><i class="fa fa-phone"></i><span class="nav-label">调度预约</span></a>
+                    </li>
+                    <li   >
+                        <a href="jiguan.html"  ><i class="fa fa-user"></i><span class="nav-label">技师管理</span></a>
+                    </li>
+                    <li   >
+                        <a href="flistcha.html"  ><i class="fa fa-sitemap "></i><span class="nav-label">分站管理</span></a>
+                    </li>
+                    <li  >
+                        <a><i class="fa fa-user"></i> <span class="nav-label">遇到问题</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="active"><a href="problem.html">问题记录</a></li>
+                            <li><a href="">处理列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <!----右边内容开始---->
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+             <form role="search" class="navbar-form-custom" action="search_results.html" >
+                <div class="form-group">
+                    <input type="text" placeholder="搜索关键词..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">欢迎使用上家分站系统。</span>
+                </li>
+                <li class="dropdown">
+
+
+                </li>
+                <li class="dropdown" >
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> 退出
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>工单详情</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="layouts.html">主页</a>
+                        </li>
+                        <li>
+                            <a href="liecha.html">工单查询</a>
+                        </li>
+                        <li class="active">
+                            <strong>TM17315360001234</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+        <div class="wrapper wrapper-content">
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>基础信息</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="footable table  table-stripped    toggle-arrow-tiny table-color  "  click_single data-page-size="10">
+                                <thead>
+                                <tr>
+                                    <th >类型</th>
+                                    <th  data-hide="phone">服务数量</th>
+                                    <th  data-hide="phone">客户</th>
+                                    <th data-hide="phone">电话</th>
+                                    <th data-hide="phone">服务地址</th>
+                                    <th data-hide="phone">商家 </th>
+                                    <th data-hide="phone">分站</th>
+                                    <th data-hide="phone">技师</th>
+                                    <th data-hide="phone">更新时间</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td>
+                                        安装单
+                                    </td>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        张三
+                                    </td>
+                                    <td>
+                                        15378905643
+                                    </td>
+                                    <td>
+                                        浙江省杭州市富阳区东洲街道十三号路东箭集团
+                                    </td>
+                                    <td>
+                                        箭牌旗舰店
+                                    </td>
+                                    <td>
+                                         杭州上家
+                                    </td>
+                                    <td>
+                                         王大大
+                                    </td>
+                                    <td>
+                                        2017/02/27
+                                    </td>
+
+
+
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>运营备注</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <p class="red-lg">产品发货有误，安装坑距有误！</p>
+                            <P class="text-right cao_lg">操作人：<span>赵强</span></P>
+                            <P class="text-right"> 2017/01/01 13:20</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>分站备注</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div id="content" class="beizhu_lg">产品发货有误</div>
+                            <fieldset class="form-horizontal" style="display: none" id="describe" >
+                                <div class="form-group"  >
+                                    <label class="col-xs-2 control-label">描述</label>
+                                    <textarea  rows="8"  class="col-xs-10"></textarea>
+                                </div>
+                            </fieldset>
+                            <p class="text-right" ><button type="button" class="btn btn-primary" id="editor" >编辑</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <script type="text/javascript">
+               var odiv=document.getElementById('content');
+               var op=document.getElementById('editor');
+               var of=document.getElementById('describe');
+               var i=0;
+                   op.onclick=function(){
+                       if(i%2==0){
+                           odiv.style.display="none"
+                           of.style.display='block';
+                           op.innerHTML='保存';
+                           i++;
+                              }
+                        else if(i%2!=0) {
+                               odiv.style.display="block"
+                               of.style.display='none';
+                               op.innerHTML='编辑';
+                                  i++;
+                                }
+                        }
+           </script>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5> 技师备注  </h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <p class="red-lg">产品发货有误，安装坑距有误！</p>
+                            <P class="text-right cao_lg">操作人：<span>吴国强</span></P>
+                            <P class="text-right"> 2017/01/01 13:20</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>问题留言-1</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <p class="red-lg"> 产品发货有误，安装坑距有误</p>
+                            <P class="text-right cao_lg">操作人：<span>赵海滨</span></P>
+                            <P class="text-right"> 2017/01/01 13:20</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>取证信息-1</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                <tr>
+                                    <th>客户取证</th>
+                                    <td>已证实</td>
+
+                                </tr>
+                                <tr>
+                                    <th>技师取证</th>
+                                    <td>已证实实际坑距无误</td>
+                                </tr>
+                                <tr>
+                                    <th>分站取证</th>
+                                    <td>已证实</td>
+
+                                </tr>
+                                <tr>
+                                    <th>商家取证</th>
+                                    <td> 未联系 </td>
+
+                                </tr>
+                                <tr>
+                                    <th>物流取证</th>
+
+                                    <td> 未联系</td>
+
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                            <P class="text-right cao_lg">操作人：<span>张晓敏</span></P>
+                            <P class="text-right"> 2017/01/01 13:20</P>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5> 处理结果-1 </h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <p class="red-lg">  总部已联系上客户，请继续预约操作，完成此工单期间给您带来的困扰，表示抱歉，祝您工作顺利！</p>
+                            <P class="text-right cao_lg">操作人：<span>王飞</span></P>
+                            <P class="text-right"> 2017/01/01 13:20</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                  <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>主工单号：TM17315360001234</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                             <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">配置选项 1</a>
+                                </li>
+                                <li><a href="#">配置选项  2</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                     </div>
+                    <div class="ibox-content detail">
+                              <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>订单来源：</th>
+                                        <td>
+                                            天猫
+                                        </td>
+                                        <td>
+                                            直属来源，有个人，企业，平台转单等等
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>关联商家：</th>
+                                        <td>天猫箭牌旗舰店	</td>
+                                        <td >卖家身份</td>
+                                    </tr>
+                                    <tr>
+                                        <th>商家联系：</th>
+                                        <td>13389688754	</td>
+                                        <td>卖家联系方式</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>主工单号：
+                                        </th>
+                                        <td>
+                                            TM17315360001234
+                                        </td>
+                                        <td>
+                                            自有系统服务主工单编号，主工单至少由一个子工单组成
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>原始主单号：
+                                        </th>
+                                        <td>
+                                            3009834280370084
+                                        </td>
+                                        <td>
+                                            原始来源主参考编号，可为空
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 服务对象：</th>
+                                        <td> 张三	</td>
+                                        <td> 客户身份</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  联系电话：</th>
+                                        <td> 15868855336</td>
+                                        <td> 客户联系方式</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>参考服务地址：</th>
+                                        <td> 浙江省杭州市富阳区东洲街道十三号路东箭集团	</td>
+                                        <td>初次接收到的服务地址 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 参考服务地址的坐标：</th>
+                                        <td>120.152143,30.285992 </td>
+                                        <td> 初次接收到的服务地址的坐标</td>
+                                    </tr>
+                                    <tr>
+                                        <th>实际服务地址： </th>
+                                        <td>浙江省杭州市富阳区东洲街道十三号路东箭集团</td>
+                                        <td>实际需要服务的地址，可为空</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>服务区域： </th>
+                                        <td>浙江/杭州/富阳/东洲街道	</td>
+                                        <td> 系统规划区域数据</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th> 佣金支付方： </th>
+                                        <td> 天猫	</td>
+                                        <td>实际支付佣金的身份 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  执行分站： </th>
+                                        <td> 上您家（杭州上家）	</td>
+                                        <td>工单承接方名称 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>   分站电话： </th>
+                                        <td>  	4008000120</td>
+                                        <td> 工单承接方联系电话</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 业务模板：   </th>
+                                        <td>  喵师傅卫浴类	</td>
+                                        <td>工单承接业务模板 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  调度人员：  </th>
+                                        <td>  王二	</td>
+                                        <td>调度操作人员 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 调度联系：  </th>
+                                        <td>  4008000120	</td>
+                                        <td>调度操作人员联系方式 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>   技师姓名： </th>
+                                        <td>  李四	</td>
+                                        <td>实施人员（技师） </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>   技师电话： </th>
+                                        <td>13986321785   	</td>
+                                        <td> 实施人员手机联系方式</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 开单时间： </th>
+                                        <td>2017-1-1 下午 18:00:00 </td>
+                                        <td> 商务系统收到委托的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  运营时间： </th>
+                                        <td>  2017-1-1 下午 18:00:00	</td>
+                                        <td> 运营系统收到委托的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 指派时间：  </th>
+                                        <td>2017-1-1 下午 18:00:00	 </td>
+                                        <td> 调度操作人员指派技师的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  接单时间： </th>
+                                        <td> 2017-1-1 下午 18:00:00	</td>
+                                        <td> 实际接单操作APP的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  商品签收： </th>
+                                        <td> 2017-1-1 下午 18:00:00		</td>
+                                        <td> 第三方物流到货回执的时间，可为空</td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-1</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>接单</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：</th>
+                                        <td>接单</td>
+                                        <td>本次操作的计划</td>
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>回写"喵师傅"的第一次信息</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 11:00:00 </td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2   13:00:00 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 实际操作时间：</th>
+                                        <td>2017-1-1  12:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 坐标X：	</th>
+                                        <td> 120.1521143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果： </th>
+                                        <td>  失败</td>
+                                        <td>  接单失败</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>  失败原因：		</th>
+                                        <td>  拒接此单 </td>
+                                        <td> 师傅可以拒绝此单 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作：		</th>
+                                        <td> 操作“拒接此单”</td>
+                                        <td> 本次实际操作的内容</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作： </th>
+                                        <td> 无</td>
+                                        <td> 下次操作的计划</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 无</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 无</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td>  实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-2</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>接单</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：</th>
+                                        <td>接单</td>
+                                        <td>本次操作的计划</td>
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>回写"喵师傅"的第一次信息</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 11:00:00 </td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2   13:00:00 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 实际操作时间：</th>
+                                        <td>2017-1-1  12:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 坐标X：	</th>
+                                        <td> 120.1521143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果： </th>
+                                        <td>  成功</td>
+                                        <td>  接单成功</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>  失败原因：		</th>
+                                        <td>   无 </td>
+                                        <td> 师傅可以拒绝接此单 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作：		</th>
+                                        <td>  接单</td>
+                                        <td> 本次实际操作的内容</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作： </th>
+                                        <td> 预约</td>
+                                        <td> 下次操作的计划</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td>   2017-1-2 12:00:00 </td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td>   2017-1-2 23:59:59 </td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td>  实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--2-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-3</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>首次预约</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 预约</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/5</td>
+                                        <td>回写“喵师傅”的第1次信息</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 12:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-1 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 失败</td>
+                                        <td> 预约失败</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>未接听/未到货/暂时不需要安装/取消安装/信息错误</td>
+                                        <td>预约失败的5个原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 设置“再次预约”时间</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>预约 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-1 18:00:01</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-3 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--3-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-3</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>首次预约</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 预约</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/5</td>
+                                        <td>回写“喵师傅”的第1次信息</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 12:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-1 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 预约成功</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>无</td>
+                                        <td>没有失败原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 设置“上门服务”时间</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>签到 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-3 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-3 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--4-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-4</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>再次预约</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 预约</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 4/5</td>
+                                        <td>回写“喵师傅”的第4次信息</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 12:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-3 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-2 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 失败</td>
+                                        <td> 预约失败</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>未接听/未到货/暂时不需要安装/取消安装/信息错误</td>
+                                        <td>预约失败的5个原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 设置“再次预约”时间</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>预约 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-2 18:00:01</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-3 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--5-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-5</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>再次预约</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 预约</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 5/5</td>
+                                        <td>回写“喵师傅”的第5次信息</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-1 18:00:01</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-3 18:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-2 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 预约成功</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>无</td>
+                                        <td>没有失败原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 设置“上门服务”时间</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>签到 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-3 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-3 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 是/否</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--6-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-6</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>复查签到</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 签到（复查）</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 2/5</td>
+                                        <td>回写“喵师傅”的第2次信息</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-2 00:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-2 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 失败</td>
+                                        <td> 原有计划时间需要改动</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>改约</td>
+                                        <td>上门服务时间需要改约</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 设置“上门服务”时间</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>签到 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-4 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--7-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-7</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>签到（复查）</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 复查签到</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 5/5</td>
+                                        <td>回写“喵师傅”操作次数已用完</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-2 00:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-2 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-2 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 原有计划时间无需改动</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>无</td>
+                                        <td>没有失败原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 无</td>
+                                        <td> 本次无需操作</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>签到 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-3 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-3 18:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--8-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-8</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>上门签到</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 签到</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>只有1次签到成功机会</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-4 18:59:59</td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-4 20:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 失败</td>
+                                        <td> 未按规定时间或规定地点进行签到</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>异地/超时</td>
+                                        <td>签到失败的原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 签到（喵师傅被动）</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>完工</td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-4 23:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--9-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-9</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>上门签到</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 签到</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>只有1次签到成功机会</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-4 18:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-4 15:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 已按规定时间和规定地点进行签到</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>无</td>
+                                        <td>签到失败的原因</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 签到（喵师傅被动）</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>完工 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 2017-1-4 23:59:59</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--10-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-10</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>完工核销</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 完工</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>当天拥有成功核销机会</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-4 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-5 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 已按规定时间和规定地点进行签到</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>失败（违规）</td>
+                                        <td>未按规定时间进行核销</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 完工</td>
+                                        <td> 本次需要操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>结算 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 暂无</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 暂无</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>操作记录-11</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th>操作记录：</th>
+                                        <td>完工核销</td>
+                                        <td>本次操作的主题</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>操作内容：	</th>
+                                        <td> 完工</td>
+                                        <td> 本次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>操作次数： </th>
+                                        <td> 1/1</td>
+                                        <td>当天拥有成功核销机会</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 计划操作开始：</th>
+                                        <td> 2017-1-4 13:00:00</td>
+                                        <td>规定的最早操作时间 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>计划操作截止： </th>
+                                        <td>2017-1-4 23:59:59 </td>
+                                        <td>规定的最晚操作时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>实际操作时间： </th>
+                                        <td>2017-1-5 18:00:00 </td>
+                                        <td>用户实际操作的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 坐标X：</th>
+                                        <td>120.152143</td>
+                                        <td> 地图操作的X经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  坐标Y：	</th>
+                                        <td> 30.285992</td>
+                                        <td> 地图操作的Y经度坐标</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 操作结果：	</th>
+                                        <td> 成功</td>
+                                        <td> 已按规定时间和规定地点进行签到</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>失败原因：</th>
+                                        <td>失败（违规）</td>
+                                        <td>未按规定时间进行核销</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 本次操作： </th>
+                                        <td> 完工</td>
+                                        <td> 本次实际操作的内容</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 下次操作：		</th>
+                                        <td>结算 </td>
+                                        <td>下次操作的计划</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作开始：		</th>
+                                        <td> 暂无</td>
+                                        <td> 规定的最早操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 下次操作截止：		</th>
+                                        <td> 暂无</td>
+                                        <td> 规定的最晚操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 是否违规：		</th>
+                                        <td> 违规/无</td>
+                                        <td> 实际操作时间是否在规定时间内</td>
+                                    </tr>
+                                    <tr>
+                                        <th>  操作人：		</th>
+                                        <td>   姓名（技师）</td>
+                                        <td>  操作人的信息</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>子工单号：TM17315360001234-1</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+
+                                        <th>子工单号：</th>
+                                        <td>TM17315360001234-1</td>
+                                        <td>自有系统服务子工单编号，子工单必须所属一个主工单</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>原始子单号：	</th>
+                                        <td>3009834280400084</td>
+                                        <td> 原始来源子参考编号，可为空</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <th>服务内容：： </th>
+                                        <td>普通坐便器安装</td>
+                                        <td>	具体服务内容，归属业务模板</td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <th> 服务数量：</th>
+                                        <td> 1</td>
+                                        <td>服务内容数量</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <th>关联商品：</th>
+                                        <td>777 </td>
+                                        <td>相关产品信息</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th>佣金金额：</th>
+                                        <td>50</td>
+                                        <td>约定的子工单佣金收入，非主工单佣金</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  技师佣金：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td>	约定的子工单佣金支出</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  异常内容：
+                                        </th>
+                                        <td> 无	</td>
+                                        <td> 未在约定内的服务请求</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  异常费用：
+                                        </th>
+                                        <td>0</td>
+                                        <td>未在约定内的服务费用</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 商家回复时间：
+                                        </th>
+                                        <td>2017-1-1 下午 18:00:00</td>
+                                        <td>商家做出回应的时间</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 商家回复结果：
+                                        </th>
+                                        <td>默认同意</td>
+                                        <td>三天内商家不作出回复默认同意异常费用方案</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 异常回款时间：
+                                        </th>
+                                        <td>2017/3/1 12:00:00</td>
+                                        <td>实际支付方打款的时间</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th> 异常回款：
+                                        </th>
+                                        <td>0</td>
+                                        <td>异常回款的金额，可为空</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>-50</td>
+                                        <td>需结算实施人员佣金的缺省金额</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 实际佣金支出：
+                                        </th>
+                                        <td>-50</td>
+                                        <td>最终实际支付的金额</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 佣金支出欠款：
+                                        </th>
+                                        <td> 0</td>
+                                        <td>未完全支付后的欠款金额</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th>需支付佣金：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td>需支付给实施人员的费用</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>佣金已收款：
+                                        </th>
+                                        <td> 0</td>
+                                        <td> 已向支付方收到的费用</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 实际佣金支出：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td> 最终实际支付的金额</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 佣金支出欠款：
+
+                                        </th>
+                                        <td>0	</td>
+                                        <td>未完全支付后的欠款金额</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 佣金回款时间：
+
+                                        </th>
+                                        <td>2017-1-1 下午 18:00:00</td>
+                                        <td> 实际支付方打款的时间</td>
+                                    </tr>
+
+
+
+
+
+                                    <tr>
+                                        <th> 垫资还款：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>偿还垫资的总金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>垫资还款时间：
+
+                                        </th>
+                                        <td>2017-1-1 下午 18:00:00		</td>
+                                        <td>	系统上垫资还款的操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 完结合计：
+                                        </th>
+                                        <td>	0		 </td>
+                                        <td>实际子工单盈亏金额</td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>子工单号：TM17315360001234-2  </h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">配置选项 1</a>
+                                    </li>
+                                    <li><a href="#">配置选项  2</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content detail">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+
+                                        <th>子工单号：</th>
+                                        <td>TM17315360001234-2</td>
+                                        <td>自有系统服务子工单编号，子工单必须所属一个主工单</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <th>原始子单号：	</th>
+                                        <td>3009834280400084</td>
+                                        <td> 原始来源子参考编号，可为空</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <th>服务内容：： </th>
+                                        <td>普通坐便器安装</td>
+                                        <td>	具体服务内容，归属业务模板</td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <th> 服务数量：</th>
+                                        <td> 1</td>
+                                        <td>服务内容数量</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <th>关联商品：</th>
+                                        <td>777 </td>
+                                        <td>相关产品信息</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th>佣金金额：</th>
+                                        <td>50</td>
+                                        <td>约定的子工单佣金收入，非主工单佣金</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>  技师佣金：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td>	约定的子工单佣金支出</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>需支付佣金：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td>需支付给实施人员的费用</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>佣金已收款：
+                                        </th>
+                                        <td> 0</td>
+                                        <td> 已向支付方收到的费用</td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 实际佣金支出：
+                                        </th>
+                                        <td>-50	</td>
+                                        <td> 最终实际支付的金额</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 佣金支出欠款：
+
+                                        </th>
+                                        <td>0	</td>
+                                        <td>未完全支付后的欠款金额</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 总部需垫资：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>需结算实施人员佣金的缺省金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th> 佣金回款时间：
+
+                                        </th>
+                                        <td>2017-1-1 下午 18:00:00</td>
+                                        <td> 实际支付方打款的时间</td>
+                                    </tr>
+
+
+
+
+
+                                    <tr>
+                                        <th> 垫资还款：
+                                        </th>
+                                        <td>50	 </td>
+                                        <td>偿还垫资的总金额  </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>垫资还款时间：
+
+                                        </th>
+                                        <td>2017-1-1 下午 18:00:00		</td>
+                                        <td>	系统上垫资还款的操作时间</td>
+                                    </tr>
+                                    <tr>
+                                        <th> 完结合计：
+                                        </th>
+                                        <td>	0		 </td>
+                                        <td>实际子工单盈亏金额</td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+
+                </div>
+                <div>
+                    <strong>版权</strong> 上家科技有限公司 &copy; 2014-2015
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+        <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/demo/peity-demo.js"></script>
+    <script src="js/plugins/staps/jquery.steps.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $('.footable').footable();
+                $('.footable2').footable();
+
+            });
+
+        </script>
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+  </script>
+    <script>
+        $(document).ready(function(){
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element)
+                {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>分站系统</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header"  >
+                    <div class="dropdown profile-element" >
+                            <span>
+                                 <img alt="image"  src="svg/profile_small.svg"  />
+                            </span>
+                        <span data-toggle="dropdown" class="dropdown-toggle" href="#"  >
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">杭州上家</strong>
+                               </span> <span class="text-muted text-xs block">颜丹丹</span> </span>
+                            </span>
+                    </div>
+                    <div class="logo-element">
+                        UPH
+                    </div>
+                </li>
+                <li    >
+                    <a href="layouts.html"><i class="fa fa-bar-chart-o"></i><span class="nav-label">主页</span></a>
+                </li>
+                <!--新增技师收入开始-->
+                <li>
+                    <a href="jiincome.html"><i class="fa fa-search" aria-hidden="true"></i> <span class="nav-label">技师收入</span></a>
+                </li>
+                <!--新增技师收入结束-->
+                <li >
+                    <a href="gongdan.html"><i class="fa fa-search" aria-hidden="true"></i><span class="nav-label">工单查询</span></a>
+                </li>
+                <li >
+                    <a href="gongdanlist.html"  ><i class="fa fa-wrench"></i><span class="nav-label">工单列表</span></a>
+                </li>
+                <li  >
+                    <a href="zhipai.html"  ><i class="fa fa-hand-o-right"></i><span class="nav-label">技师指派</span></a>
+                </li>
+                <li>
+                    <a href="schedul-appoin.html"  ><i class="fa fa-phone"></i><span class="nav-label">调度预约</span></a>
+                </li>
+                <li   >
+                    <a href="jiguan.html"  ><i class="fa fa-user"></i><span class="nav-label">技师管理</span></a>
+                </li>
+                <li   >
+                    <a href="flistcha.html"  ><i class="fa fa-sitemap "></i><span class="nav-label">分站管理</span></a>
+                </li>
+                <li  >
+                    <a><i class="fa fa-user"></i> <span class="nav-label">遇到问题</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="active"><a href="problem.html">问题记录</a></li>
+                        <li><a href="">处理列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-----右边内容开始-->
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn  btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="搜索关键词..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">欢迎使用上家分站系统</span>
+                    </li>
+                    <li class="dropdown">
+
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                        </a>
+
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 退出 </i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>技师余额</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a>技师收入</a>
+                    </li>
+                    <li>
+                        <a><strong>xxx的余额</strong></a>
+                    </li>
+
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+
+                        <div class="ibox-content">
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12 col-xs-12"> <h3> xxx的余额 </h3><br></div>
+                                <div class="col-sm-2 col-xs-5" >
+                                    <span style="font-size: 24px;">1320</span><span>.00</span>元
+                                </div>
+                                <div class="col-sm-9 col-xs-5">
+                                    <a  href="accountlist.html">
+                                    <button class="btn btn-primary col-lg-2" type="button" >提现(敬情期待)</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <form method="get" class="form-horizontal ibox-banlance">
+
+                                <!--<div class="form-group">-->
+                                    <!--<div class="col-sm-12">-->
+                                        <!--<div class="input-group"><input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">查询-->
+                                        <!--</button> </span></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group  " id="data_5">
+                                    <div class="col-sm-12">
+                                        <select   class="btn btn-white col-sm-2 " id="jiban-dis" >
+                                            <option value="管理员" selected >类型</option>
+                                            <option>收入</option>
+                                            <option>支出</option>
+                                        </select>
+                                        <select   class="btn btn-white col-sm-2 "  id="jiban-dis" >
+                                            <option value="管理员" selected >记录</option>
+                                            <option>账户充值</option>
+                                            <option>服务录入</option>
+                                            <option>服务取消</option>
+                                        </select>
+                                        <button class="btn btn-primary col-sm-1 jiban-right" type="submit">查询</button>
+                                        <div class="input-daterange input-group " id="datepicker ">
+                                            <input type="text" class="form-control col-sm-2" name="start"  value="开始时间">
+                                            <span class="input-group-addon">至</span>
+                                            <input type="text" class="form-control  col-sm-2" name="end"  value="结束时间" >
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <div class="form-group">
+                                <div class="col-sm-1 col-xs-3 "><button class="btn btn-primary " style="margin-top: -8px">导出</button></div>
+                                <div class="col-sm-2 col-xs-6 ">
+                                    <span class="jiban-income">收入：</span>
+                                    <span class="jiban-income-t">1770.00</span><span class="jiban-con"></span>
+                                </div>
+                                <div class="col-sm-2 col-xs-6 ">
+                                    <span class="jiban-out">支出：</span>
+                                    <span class="jiban-out-t">450.00</span><span class="jiban-con"></span>
+                                </div>
+                                <div class="ibox-tools col-sm-offset-5 col-sm-1 text-right col-xs-offset-5 col-xs-1">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="footable table table-stripped   toggle-arrow-tiny table_wuliu"  click_single data-page-size="15">
+                                <thead>
+                                <tr>
+                                    <th >流水号</th>
+                                    <th data-hide="phone">记录</th>
+                                    <th data-hide="phone">收入</th>
+                                    <th data-hide="phone">支出</th>
+                                    <th data-hide="phone">余额</th>
+                                    <th data-hide="phone">时间</th>
+                                    <th >操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                       服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                       2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +20.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+
+                                    </td>
+                                    <td class="jiban-ouc">
+                                        -300.00
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td   class="text-left">
+                                        201707231462156263148968979262
+                                    </td>
+                                    <td>
+                                        服务完结
+                                    </td>
+                                    <td class="jiban-inc">
+                                        +200.00
+                                    </td>
+                                    <td class="jiban-ouc">
+
+                                    </td>
+                                    <td>
+                                        1320.00
+                                    </td>
+                                    <td>
+                                        2017-07-23 12:05:36
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button class="btn-white btn btn-xs"  name="a"><a href="servicelist.html">详情</a> </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="15">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+
+            </div>
+            <div>
+                <strong>版权所有</strong> 上家（杭州）科技有限公司 &copy; 2017-2018
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- FooTable -->
+<script src="js/plugins/footable/footable.all.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- Page-Level Scripts -->
+<!-- Data picker -->
+<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<!-- Image cropper -->
+<script src="js/plugins/cropper/cropper.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.footable').footable();
+        $('.footable2').footable();
+
+    });
+
+</script>
+<script>
+    $(document).ready(function(){
+
+        var $image = $(".image-crop > img")
+        $($image).cropper({
+            aspectRatio: 1.618,
+            preview: ".img-preview",
+            done: function(data) {
+                // Output the result data for cropping image.
+            }
+        });
+
+        var $inputImage = $("#inputImage");
+        if (window.FileReader) {
+            $inputImage.change(function() {
+                var fileReader = new FileReader(),
+                    files = this.files,
+                    file;
+
+                if (!files.length) {
+                    return;
+                }
+
+                file = files[0];
+
+                if (/^image\/\w+$/.test(file.type)) {
+                    fileReader.readAsDataURL(file);
+                    fileReader.onload = function () {
+                        $inputImage.val("");
+                        $image.cropper("reset", true).cropper("replace", this.result);
+                    };
+                } else {
+                    showMessage("Please choose an image file.");
+                }
+            });
+        } else {
+            $inputImage.addClass("hide");
+        }
+
+        $("#download").click(function() {
+            window.open($image.cropper("getDataURL"));
+        });
+
+        $("#zoomIn").click(function() {
+            $image.cropper("zoom", 0.1);
+        });
+
+        $("#zoomOut").click(function() {
+            $image.cropper("zoom", -0.1);
+        });
+
+        $("#rotateLeft").click(function() {
+            $image.cropper("rotate", 45);
+        });
+
+        $("#rotateRight").click(function() {
+            $image.cropper("rotate", -45);
+        });
+
+        $("#setDrag").click(function() {
+            $image.cropper("setDragMode", "crop");
+        });
+
+        $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+
+        $('#data_2 .input-group.date').datepicker({
+            startView: 1,
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "dd/mm/yyyy"
+        });
+
+        $('#data_3 .input-group.date').datepicker({
+            startView: 2,
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true
+        });
+
+        $('#data_4 .input-group.date').datepicker({
+            minViewMode: 1,
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true
+        });
+
+        $('#data_5 .input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true
+        });
+
+        var elem = document.querySelector('.js-switch');
+        var switchery = new Switchery(elem, { color: '#1AB394' });
+
+        var elem_2 = document.querySelector('.js-switch_2');
+        var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+        var elem_3 = document.querySelector('.js-switch_3');
+        var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green'
+        });
+
+        $('.demo1').colorpicker();
+
+        var divStyle = $('.back-change')[0].style;
+        $('#demo_apidemo').colorpicker({
+            color: divStyle.backgroundColor
+        }).on('changeColor', function(ev) {
+            divStyle.backgroundColor = ev.color.toHex();
+        });
+
+        $('.clockpicker').clockpicker();
+
+        $('input[name="daterange"]').daterangepicker();
+
+        $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+        $('#reportrange').daterangepicker({
+            format: 'MM/DD/YYYY',
+            startDate: moment().subtract(29, 'days'),
+            endDate: moment(),
+            minDate: '01/01/2012',
+            maxDate: '12/31/2015',
+            dateLimit: { days: 60 },
+            showDropdowns: true,
+            showWeekNumbers: true,
+            timePicker: false,
+            timePickerIncrement: 1,
+            timePicker12Hour: true,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            opens: 'right',
+            drops: 'down',
+            buttonClasses: ['btn', 'btn-sm'],
+            applyClass: 'btn-primary',
+            cancelClass: 'btn-default',
+            separator: ' to ',
+            locale: {
+                applyLabel: 'Submit',
+                cancelLabel: 'Cancel',
+                fromLabel: 'From',
+                toLabel: 'To',
+                customRangeLabel: 'Custom',
+                daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                firstDay: 1
+            }
+        }, function(start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        });
+
+
+    });
+    var config = {
+        '.chosen-select'           : {},
+        '.chosen-select-deselect'  : {allow_single_deselect:true},
+        '.chosen-select-no-single' : {disable_search_threshold:10},
+        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+        '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
+
+    $("#ionrange_1").ionRangeSlider({
+        min: 0,
+        max: 5000,
+        type: 'double',
+        prefix: "$",
+        maxPostfix: "+",
+        prettify: false,
+        hasGrid: true
+    });
+
+    $("#ionrange_2").ionRangeSlider({
+        min: 0,
+        max: 10,
+        type: 'single',
+        step: 0.1,
+        postfix: " carats",
+        prettify: false,
+        hasGrid: true
+    });
+
+    $("#ionrange_3").ionRangeSlider({
+        min: -50,
+        max: 50,
+        from: 0,
+        postfix: "°",
+        prettify: false,
+        hasGrid: true
+    });
+
+    $("#ionrange_4").ionRangeSlider({
+        values: [
+            "January", "February", "March",
+            "April", "May", "June",
+            "July", "August", "September",
+            "October", "November", "December"
+        ],
+        type: 'single',
+        hasGrid: true
+    });
+
+    $("#ionrange_5").ionRangeSlider({
+        min: 10000,
+        max: 100000,
+        step: 100,
+        postfix: " km",
+        from: 55000,
+        hideMinMax: true,
+        hideFromTo: false
+    });
+
+    $(".dial").knob();
+
+    $("#basic_slider").noUiSlider({
+        start: 40,
+        behaviour: 'tap',
+        connect: 'upper',
+        range: {
+            'min':  20,
+            'max':  80
+        }
+    });
+
+    $("#range_slider").noUiSlider({
+        start: [ 40, 60 ],
+        behaviour: 'drag',
+        connect: true,
+        range: {
+            'min':  20,
+            'max':  80
+        }
+    });
+
+    $("#drag-fixed").noUiSlider({
+        start: [ 40, 60 ],
+        behaviour: 'drag-fixed',
+        connect: true,
+        range: {
+            'min':  20,
+            'max':  50
+        }
+    });
+
+
+</script>
+
+
+</body>
+
+</html>

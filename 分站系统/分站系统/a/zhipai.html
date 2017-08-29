@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>分站系统</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header"  >
+                        <div class="dropdown profile-element" >
+                            <span>
+                                 <img alt="image"  src="svg/profile_small.svg"  />
+                            </span>
+                               <span data-toggle="dropdown" class="dropdown-toggle" href="#"  >
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">杭州上家</strong>
+                               </span> <span class="text-muted text-xs block">颜丹丹</span> </span>
+                            </span>
+                        </div>
+                        <div class="logo-element">
+                            UPH
+                        </div>
+                    </li>
+                    <li    >
+                        <a href="layouts.html"><i class="fa fa-bar-chart-o"></i><span class="nav-label">主页</span></a>
+                    </li>
+                    <!--新增技师收入开始-->
+                    <li>
+                        <a href="jiincome.html"><i class="fa fa-search" aria-hidden="true"></i> <span class="nav-label">技师收入</span></a>
+                    </li>
+                    <!--新增技师收入结束-->
+                    <li >
+                        <a href="gongdan.html"><i class="fa fa-search" aria-hidden="true"></i><span class="nav-label">工单查询</span></a>
+                    </li>
+                    <li >
+                        <a href="gongdanlist.html"  ><i class="fa fa-wrench"></i><span class="nav-label">工单列表</span></a>
+                    </li>
+                    <li class="active" >
+                        <a href="zhipai.html"  ><i class="fa fa-hand-o-right"></i><span class="nav-label">技师指派</span></a>
+                    </li>
+                    <li >
+                        <a href="schedul-appoin.html"  ><i class="fa fa-phone"></i><span class="nav-label">调度预约</span></a>
+                    </li>
+                    <li  >
+                        <a href="jiguan.html"  ><i class="fa fa-user"></i><span class="nav-label">技师管理</span></a>
+                    </li>
+                    <li   >
+                        <a href="flistcha.html"  ><i class="fa fa-sitemap "></i><span class="nav-label">分站管理</span></a>
+                    </li>
+                    <li  >
+                        <a><i class="fa fa-user"></i> <span class="nav-label">遇到问题</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="active"><a href="problem.html">问题记录</a></li>
+                            <li><a href="">处理列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-----右边内容开始-->
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn  btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="搜索关键词..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"> 欢迎使用上家分站系统</span>
+                </li>
+                <li class="dropdown">
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> 退出 </i>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>指派技师</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">主页</a>
+                        </li>
+                        <li>
+                            <a><strong>指派技师</strong></a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox" id="zhipai-before">
+                        <div class="ibox-title">
+                            <h5>指派工单</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="footable table  table-stripped    toggle-arrow-tiny    "  click_single data-page-size="10">
+                                <thead>
+                                <tr>
+                                    <th >待指派</th>
+                                    <th  data-hide="phone">已签收</th>
+                                    <th  data-hide="phone">未签收</th>
+                                    <th data-hide="phone">匹配成功</th>
+                                    <th>更新时间</th>
+                                </tr>
+                                </thead>
+                                <tr >
+                                    <td>
+                                      150
+                                    </td>
+                                    <td>
+                                       80
+                                    </td>
+                                    <td>
+                                        70
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+
+                                    <td>
+                                       2017/02/27
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="text-right"> <input type="checkbox"> 只匹配已签收工单 <button class="btn  btn-primary demo2 ">匹配技师</button></p>
+
+                        </div>
+                    </div>
+                    <div class="ibox" id="zhipai-after" style="display: none">
+                        <div class="ibox-title">
+                            <h5>指派工单</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="footable table  table-stripped    toggle-arrow-tiny    "  click_single data-page-size="10">
+                                <thead>
+                                <tr>
+                                    <th >待指派</th>
+                                    <th  data-hide="phone">已签收</th>
+                                    <th  data-hide="phone">未签收</th>
+                                    <th data-hide="phone">匹配成功</th>
+                                    <th data-hide="phone">匹配失败</th>
+                                    <th>更新时间</th>
+                                </tr>
+                                </thead>
+                                <tr >
+                                    <td style="padding-left: 0">
+                                         150
+                                    </td>
+                                    <td>
+                                        80
+                                    </td>
+                                    <td>
+                                        70
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+                                    <td>
+                                        50
+                                    </td>
+
+                                    <td>
+                                        2017/02/27
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                         <p class="text-right">   <input type="checkbox"> 只派已签收工单 <button class="btn  btn-primary  ">指派技师</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="pai-before">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>指派列表</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+
+                            <table class="footable table table-stripped   toggle-arrow-tiny table-color"  click_single data-page-size="10">
+                                <thead>
+                                <tr>
+                                    <th > 工单类型</th>
+                                    <th data-hide="phone">订单来源</th>
+                                    <th data-hide="phone">服务数量</th>
+                                    <th data-hide="phone">服务对象</th>
+
+                                    <th data-hide="phone"> 联系电话</th>
+                                    <th data-hide="phone">区域</th>
+                                    <th data-hide="phone">街道</th>
+                                    <th data-hide="phone">物流状态</th>
+
+                                    <th data-hide="phone">老客优派</th>
+                                    <th data-hide="phone"  >技师</th>
+                                    <th data-hide="phone">更新时间</th>
+                                    <th style="text-align: right">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                         天猫
+                                    </td>
+                                    <td>
+                                         2
+                                    </td>
+                                    <td>
+                                         张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                      东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                      -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM13415360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        吴思亮
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        已签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM15625360001568
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        5
+                                    </td>
+                                    <td>
+                                        吴强
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        已发货
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                         王亮
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        李薇薇
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                         诸葛梁
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        李德贵
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        赵发梁
+                                    </td>
+                                    <td>
+                                        15868855336
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="15">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="pai-after" style="display: none">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>指派列表</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+
+                            <table class="footable table table-stripped   toggle-arrow-tiny table-color"  click_single data-page-size="10">
+                                <thead>
+                                <tr>
+                                    <th > 工单类型</th>
+                                    <th data-hide="phone">订单来源</th>
+                                    <th data-hide="phone">服务数量</th>
+                                    <th data-hide="phone">服务对象</th>
+
+                                    <th data-hide="phone"> 联系电话</th>
+                                    <th data-hide="phone">区域</th>
+                                    <th data-hide="phone">街道</th>
+                                    <th data-hide="phone">物流状态</th>
+
+                                    <th data-hide="phone">老客优派</th>
+                                    <th data-hide="phone"  >技师</th>
+                                    <th data-hide="phone">更新时间</th>
+                                    <th style="text-align: right">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                      3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        是
+                                    </td>
+                                    <td>
+                                       王霞
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        是
+                                    </td>
+                                    <td>
+                                       王晓峰
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        是
+                                    </td>
+                                    <td>
+                                        王晓峰
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        未签收
+                                    </td>
+
+                                    <td>
+                                        是
+                                    </td>
+                                    <td>
+                                        王晓峰
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                         无记录
+                                    </td>
+
+                                    <td>
+                                        否
+                                    </td>
+                                    <td>
+                                        王霞
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td >
+                                        安装单：TM17315360001234
+                                    </td>
+                                    <td>
+                                        天猫
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        张光强
+                                    </td>
+                                    <td>
+                                        13789562563
+                                    </td>
+                                    <td>
+                                        富阳
+                                    </td>
+                                    <td>
+                                        东洲街道
+                                    </td>
+
+                                    <td>
+                                        已签收
+                                    </td>
+
+                                    <td>
+                                        是
+                                    </td>
+                                    <td>
+                                       王小明
+                                    </td>
+                                    <td>
+                                        2017/02/24
+                                    </td>
+                                    <td class="text-right" style="text-align: right">
+                                        <div class="btn-group">
+                                            <a class="btn-white btn btn-xs " href="jilist.html"  name="a"  >手动</a><button type="button" class="btn btn-white btn-xs demo3">取消工单</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="15">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+        </div>
+
+
+
+            <div class="footer">
+                <div class="pull-right">
+
+                </div>
+                <div>
+                    <strong>版权所有</strong> 上家（杭州）科技有限公司 &copy; 2017-2018
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+
+
+
+
+
+        <!-- Data picker -->
+        <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+
+
+        <!-- Image cropper -->
+        <script src="js/plugins/cropper/cropper.min.js"></script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $('.footable').footable();
+            $('.footable2').footable();
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('.demo2').click(function () {
+                swal({
+                    confirmButtonColor: "#ff9900",
+                    title: "指派成功!",
+                    confirmButtonText: "确认",
+                    type: "success"
+                }, function () {
+                    $("#zhipai-before").hide();
+                    $("#zhipai-after").show();
+                    $("#pai-before").hide();
+                    $("#pai-after").show();
+                });
+            });
+
+            $('.demo3').click(function () {
+                swal({
+                    title: " 确定取消此工单?",
+                  /*  text: "You will not be able to recover this imaginary file!",*/
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#ff9900",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("取消成功", "你已成功取消此工单.", "success");
+                });
+            });
+
+            $('.demo4').click(function () {
+                swal({
+                            title: "Are you sure?",
+                            text: "Your will not be able to recover this imaginary file!",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, delete it!",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: false,
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
+            });
+
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function(){
+
+            var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#data_5 .input-daterange').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function(ev) {
+                divStyle.backgroundColor = ev.color.toHex();
+            });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function(start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+
+        });
+        var config = {
+            '.chosen-select'           : {},
+            '.chosen-select-deselect'  : {allow_single_deselect:true},
+            '.chosen-select-no-single' : {disable_search_threshold:10},
+            '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {width:"95%"}
+        }
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+
+        $("#ionrange_1").ionRangeSlider({
+            min: 0,
+            max: 5000,
+            type: 'double',
+            prefix: "$",
+            maxPostfix: "+",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 0.1,
+            postfix: " carats",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_3").ionRangeSlider({
+            min: -50,
+            max: 50,
+            from: 0,
+            postfix: "°",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_4").ionRangeSlider({
+            values: [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ],
+            type: 'single',
+            hasGrid: true
+        });
+
+        $("#ionrange_5").ionRangeSlider({
+            min: 10000,
+            max: 100000,
+            step: 100,
+            postfix: " km",
+            from: 55000,
+            hideMinMax: true,
+            hideFromTo: false
+        });
+
+        $(".dial").knob();
+
+        $("#basic_slider").noUiSlider({
+            start: 40,
+            behaviour: 'tap',
+            connect: 'upper',
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#range_slider").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#drag-fixed").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag-fixed',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  50
+            }
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
